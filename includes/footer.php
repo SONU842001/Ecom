@@ -21,7 +21,7 @@
       </div>
       <div class="col-md-3">
         <h1>Download App</h1>
-        <img class="footer-image" src="images/playstore.png" alt=""> 
+        <img class="footer-image" src="photos/playstore.png" alt=""> 
       </div>   
       </div>
       <hr>

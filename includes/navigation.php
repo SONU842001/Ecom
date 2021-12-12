@@ -22,7 +22,7 @@
 <div class="menu-bar">
     <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="includes/signup.php">Sign Up</a></li>
+        <li><a href="signup.php">Sign Up</a></li>
         <li><a href="" data-toggle="modal" data-target="#loginModal">Login</a></li>
         <li><a href="cart.php?p_cart=<?php echo $_SESSION['username'] ?>" ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
     </ul>
