@@ -2,6 +2,7 @@
 <?php include "includes/header.php" ?>
 <?php if(isset($_SESSION['username'])){
  include "includes/navigation_user.php";
+ 
 }
 else{
  include "includes/navigation.php";
