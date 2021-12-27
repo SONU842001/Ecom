@@ -1,5 +1,12 @@
+<?php include "includes/db.php" ?>
 <?php include "includes/header.php" ?>
-<?php include "includes/navigation.php" ?>
+<?php if(isset($_SESSION['username'])){
+ include "includes/navigation_user.php";
+}
+else{
+ include "includes/navigation.php";
+}
+?>
 <?php include "includes/sidebar.php" ?>
 <?php include "includes/slider.php" ?>
 

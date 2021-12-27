@@ -22,16 +22,20 @@ if(isset($_POST['register']))
               $query.="VALUES('{$firstname}','{$lastname}','subscriber','{$new_username}','{$mobile_no}','{$new_user_email}','{$new_password}')";
     
               if(mysqli_query($connection,$query)){
-                  echo "New record created successfully";
+                 // echo "New record created successfully";
+                 echo"<script>alert('Thank you. Please login to purchase.')</script>"; 
               }
               else{
                 echo "Error: " . $query . "<br>" . mysqli_error($connection);
               } 
-            }
-            echo"<script>alert('Thank you. Please login to purchase.')</script>"; 
-
+            
+            
+}
+else {
+    echo"<script>alert('Field Cannot Be Empty.')</script>";
 }
 
+}
 
 
 
