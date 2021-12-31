@@ -2,9 +2,7 @@
 <?php include "includes/header.php" ?>
 <?php if(isset($_SESSION['username'])){
  include "includes/navigation_user.php";
- 
-}
-else{
+}else{
  include "includes/navigation.php";
 }
 ?>
@@ -14,25 +12,27 @@ else{
 <!----ON sale products------->
 
 <?php
+   
+   $query="SELECT * FROM product_categories ";
+   $categories_query = mysqli_query($connection,$query);
+   while($row=mysqli_fetch_assoc($categories_query)){
+    $categories_id = $row['categories_id'];
+    $categories_title = $row['categories_title'];
+       
 
- $query="SELECT * FROM product_categories";
- $query_categories= mysqli_query($connection,$query);
- while($row=mysqli_fetch_assoc($query_categories))
- {
-     $categories_id= $row['categories_id'];
-     $categories_title= $row['categories_title'];
+?>
 
-     ?>
-     
 
-     <section class="on-sale">
+<section class="on-sale">
   <div class="container">
       <div class="title-box">
           <h2><?php echo $categories_title ?></h2>
-          <!--          <p><a href="product.php?cat_id=<?php echo $categories_id ?>"></a></p>-->
+<!--          <p><a href="product.php?cat_id=<?php echo $categories_id ?>"></a></p>-->
       </div>
       <div class="row products">
-      <?php
+         
+         
+    <?php
     $query="SELECT * FROM products WHERE product_category_id=$categories_id LIMIT 5";
     $results=mysqli_query($connection,$query);
 
@@ -65,7 +65,7 @@ while($row=mysqli_fetch_assoc($results)){
          <?php
 }
            ?>
-                      <div class="col-md-2">
+           <div class="col-md-2">
               <div class="product-top">
                  <a href="product.php?cat_id=<?php echo $categories_id ?>">
                   <img src="images/view_all.jpg" alt="">
@@ -79,38 +79,38 @@ while($row=mysqli_fetch_assoc($results)){
         <?php
 }
            ?>      
- 
-
-
-
-
+      
+   
+</section>
+<!--------Add To Cart -------------->
+<?php include "includes/add_cart.php"?>
 
 
 
 <!-------------Website Features------------------>
-<section class="website-features">
+  <section class="website-features">
       <div class="container">
         <div class="row">
             <div class="col-md-3 feature-box">
-                <img src="photos/feature1.jpg" alt="">
+                <img src="images/feature1.jpg" alt="">
                 <div class="feature-text">
                     <p><b>100% Original items </b><br>are available here.</p>
                 </div>
             </div>
             <div class="col-md-3 feature-box">
-                <img src="photos/delivery.jpg" alt="">
+                <img src="images/delivery.jpg" alt="">
                 <div class="feature-text">
                     <p><b>Get free delivery </b><br>for every order on more than 1000.</p>
                 </div>
             </div>
             <div class="col-md-3 feature-box">
-                <img src="photos/replace.jfif" alt="">
+                <img src="images/replace.jfif" alt="">
                 <div class="feature-text">
                     <p><b>Replacement of products</b><br>if packets are not opened.</p>
                 </div>
             </div>
             <div class="col-md-3 feature-box">
-                <img src="photos/pay.jfif" alt="">
+                <img src="images/pay.jfif" alt="">
                 <div class="feature-text">
                     <p><b>Pay Online through multiple </b><br>through multiple payment options.</p>
                 </div>

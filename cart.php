@@ -50,6 +50,7 @@ $total_price=$total_price + $sub_total;
                     <td><?php echo $unit_price ?></td>
                     <td><?php echo $unit_quantity ?></td>
                     <td><?php echo $sub_total ?></td>
+                    <!-- It is used for delete the items -->
                     <td><a href="cart.php?delete_item=<?php echo $order_id ?>"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                     </div>
                 </tr>
